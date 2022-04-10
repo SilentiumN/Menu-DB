@@ -1,24 +1,21 @@
-# un
+# Menu DB
 
-## Project setup
+##First window terminal
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+cd (directory with project)
+docker-compose up -d
+npx ts-node src/index.ts (server open in localhost:3000)
 ```
 
-### Compiles and minifies for production
+##2 window terminal
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+cd (directory with project)
+npx prisma migrate dev —name init
+node prisma seed.js
+npx prisma studio (server open in localhost:5555)
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+##3 window terminal
+```
+npm run serve (vue server open in localhost:8080)
+```
